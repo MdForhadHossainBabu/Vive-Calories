@@ -1,0 +1,80 @@
+[
+  {
+    "bookId":1,
+    "bookName": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "image": "https://i.ibb.co/ydwJ1zQ/pngwing-1.png",
+    "review": "A brilliant evocation of a tragic era and a deeply personal critique of the American Dream.",
+    "totalPages": 180,
+    "rating": 4.5,
+    "category": "Fiction",
+    "tags": ["classic", "American literature", "romance"],
+    "publisher": "Scribner",
+    "yearOfPublishing": 1925
+  },
+  {
+    "bookId": 2,
+    "bookName": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "image": "https://i.ibb.co/xC6x29L/kindpng-7318921.png",
+    "review": "A powerful story of racial injustice and moral growth in a small Southern town.",
+    "totalPages": 281,
+    "rating": 4.8,
+    "category": "Fiction",
+    "tags": ["classic", "racial injustice", "coming-of-age"],
+    "publisher": "J. B. Lippincott & Co.",
+    "yearOfPublishing": 1960
+  },
+  {
+    "bookId": 3,
+    "bookName": "Sapiens: A Brief History of Humankind",
+    "author": "Yuval Noah Harari",
+    "image": "https://i.ibb.co/M8Lnm2F/kindpng-1064993.png",
+    "review": "A sweeping narrative of the history of humankind from the Stone Age to the present day.",
+    "totalPages": 443,
+    "rating": 4.7,
+    "category": "Nonfiction",
+    "tags": ["history", "anthropology", "evolution"],
+    "publisher": "Harper",
+    "yearOfPublishing": 2011
+  },
+  {
+    "bookId": 4,
+    "bookName": "The Hitchhiker's Guide to the Galaxy",
+    "author": "Douglas Adams",
+    "image": "https://i.ibb.co/Bqsw4Wy/kindpng-4022054-1.png",
+    "review": "A hilarious and imaginative romp through the galaxy with an ordinary man and his alien friend.",
+    "totalPages": 215,
+    "rating": 4.6,
+    "category": "Science Fiction",
+    "tags": ["humor", "adventure", "space opera"],
+    "publisher": "Pan Books",
+    "yearOfPublishing": 1979
+  },
+  {
+    "bookId": 5,
+    "bookName": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "image": "https://i.ibb.co/PQZbCvM/kindpng-81724-1.png",
+    "review": "A poignant portrayal of teenage angst and alienation in post-war America.",
+    "totalPages": 277,
+    "rating": 4.4,
+    "category": "Fiction",
+    "tags": ["coming-of-age", "American literature", "rebels"],
+    "publisher": "Little, Brown and Company",
+    "yearOfPublishing": 1951
+  },
+  {
+    "bookId": 6,
+    "bookName": "1984",
+    "author": "George Orwell",
+    "image": "https://i.ibb.co/x5PNDjK/kindpng-2193744-1.png",
+    "review": "A chilling dystopian vision of a totalitarian society where freedom is restricted and truth is manipulated.",
+    "totalPages": 328,
+    "rating": 4.9,
+    "category": "Fiction",
+    "tags": ["dystopian", "political fiction", "surveillance"],
+    "publisher": "Secker & Warburg",
+    "yearOfPublishing": 1949
+  }
+]
