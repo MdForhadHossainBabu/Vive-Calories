@@ -76,5 +76,44 @@
     "tags": ["dystopian", "political fiction", "surveillance"],
     "publisher": "Secker & Warburg",
     "yearOfPublishing": 1949
+  },
+  {
+    "bookId": 7,
+    "bookName": "Nisamoni O Ekti Biral",
+    "author": "Nazmul Hasan",
+    "image": "https://i.ibb.co/x5PNDjK/kindpng-2193744-1.png",
+    "review": "A chilling dystopian vision of a totalitarian society where freedom is restricted and truth is manipulated.",
+    "totalPages": 128,
+    "rating": 4.5,
+    "category": "short story",
+    "tags": ["dystopian", "political fiction", "surveillance"],
+    "publisher": "Secker & Warburg",
+    "yearOfPublishing": 2003
+  },
+  {
+    "bookId": 8,
+    "bookName": "The English Purpose of daily life",
+    "author": "Abu Zobayer Mukul ",
+    "image": "https://i.ibb.co/x5PNDjK/kindpng-2193744-1.png",
+    "review": "A chilling dystopian vision of a totalitarian society where freedom is restricted and truth is manipulated.",
+    "totalPages": 328,
+    "rating": 4.9,
+    "category": "Tect point",
+    "tags": ["dystopian", "political fiction", "surveillance"],
+    "publisher": "Secker & Warburg",
+    "yearOfPublishing": 1949
+  },
+  {
+    "bookId": 9,
+    "bookName": "Uttal Foundation of village purpose",
+    "author": "Jubayer Zihadi ",
+    "image": "https://i.ibb.co/x5PNDjK/kindpng-2193744-1.png",
+    "review": "A chilling dystopian vision of a totalitarian society where freedom is restricted and truth is manipulated.",
+    "totalPages": 328,
+    "rating": 4.9,
+    "category": "villagian",
+    "tags": ["dystopian", "political fiction", "surveillance"],
+    "publisher": "Secker & Warburg",
+    "yearOfPublishing": 1949
   }
 ]

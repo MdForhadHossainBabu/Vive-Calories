@@ -1,49 +1,53 @@
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import Home from './components/Home/Home'
-import ErrorPage from './components/ErrorPage/ErrorPage'
+import Root from './components/Root/Root'
+import Banner from './components/Banner/Banner'
 import ListedBooks from './components/ListedBooks/ListedBooks'
-import MainHome from './components/MainHome/MainHome'
-import PageOfRead from './components/PageOfRead/PageOfRead'
-import BookDetail from './components/BookDetail/BookDetail'
-import ListedBook from './components/ListedBook/ListedBook'
+import BookDetails from './components/BookDetails/BookDetails'
+import ErrorPage from './components/ErrorPage/ErrorPage'
+import Read from './components/Read/Read'
+import Wishlist from './components/Wishlist/Wishlist'
+import { Toaster } from 'react-hot-toast'
+
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home></Home>,
-    errorElement: <ErrorPage></ErrorPage>,
+    element: <Root />,
+    errorElement: <ErrorPage />,
     children: [
       {
-        path: '/',
-        element: <MainHome></MainHome>,
+        index: true,
+        element: <Banner></Banner>,
       },
       {
-        path: '/listedbooks',
-        element: <ListedBooks></ListedBooks>,
+        path: '/listBooks',
+        element: <ListedBooks />,
         children: [
           {
             index: true,
-            element:<ListedBooks></ListedBooks>
+            element: <Read />,
           },
-        ]
+          {
+            path: 'wishlist',
+            element: <Wishlist></Wishlist>,
+          },
+        ],
       },
       {
-        path: '/book/:id',
-        element: <BookDetail></BookDetail>,
-      },
-      {
-        path: '/pagestoread',
-        loader:()=>fetch('/book.json'),
-        element: <PageOfRead></PageOfRead>,
+        path: '/book/:bookId',
+        loader: () => fetch(`/book.json`),
+        element: <BookDetails></BookDetails>,
       },
     ],
   },
 ]);
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
     <RouterProvider router={router}></RouterProvider>
+    <Toaster/>
   </>,
 )
  

@@ -1,67 +1,95 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
+  const sideButton = (
+    <div className="flex gap-2 px-5">
+      <a className="border-2 px-6 font-semibold py-2 rounded-lg bg-green-400 text-white">
+        Sign In
+      </a>
+      <a className="border-2 px-6 font-semibold py-2 rounded-lg bg-blue-400 text-white">
+        Sign Up
+      </a>
+    </div>
+  );
+
+  const navLinks = (
+    <div className="lg:flex gap-4 text-xl space-y-2   items-center">
+      <li>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? 'text-green-500  lg:px-8 font-bold hover:bg-green-500 hover:text-white border-green-500  lg:border-2'
+              : 'lg:border-2 px-8'
+          }
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/listBooks"
+          className={({ isActive }) =>
+            isActive
+              ? 'text-green-500  px-4 font-bold hover:bg-green-500 hover:text-white border-green-500  lg:border-2'
+              : 'lg:border-2'
+          }
+        >
+          Listed Books
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/readPage"
+          className={({ isActive }) =>
+            isActive
+              ? 'text-green-500  px-12 font-bold hover:bg-green-500 hover:text-white border-green-500  lg:border-2'
+              : 'lg:border-2'
+          }
+        >
+          Page of Read
+        </NavLink>
+      </li>
+    </div>
+  );
+
  return (
-   <div>
-     <div className="flex items-center justify-between fixed w-full h-12 z-10 lg:px-12  lg:my-6 shadow-sm pb-6 ">
-       <div className="lg:text-3xl text-3xl font-bold text-green-500">
-         <Link to="/">Book Vive</Link>
+  <>
+ 
+     <div className="navbar bg-base-200 flex items-center shadow-lg px-4 fixed z-10">
+       <div className="navbar-start">
+         <div className="dropdown">
+           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+             <svg
+               xmlns="http://www.w3.org/2000/svg"
+               className="h-5 w-5"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke="currentColor"
+             >
+               <path
+                 strokeLinecap="round"
+                 strokeLinejoin="round"
+                 strokeWidth="2"
+                 d="M4 6h16M4 12h8m-8 6h16"
+               />
+             </svg>
+           </div>
+           <ul
+             tabIndex={0}
+             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 flex items-center"
+           >
+             {navLinks}
+           </ul>
+         </div>
+         <a className="btn btn-ghost text-3xl font-extrabold">Book Vive</a>
        </div>
-       <div className="hidden lg:flex items-center gap-6 lg:text-xl ">
-         <NavLink
-           to="/"
-           className={({ isActive }) =>
-             isActive
-               ? 'px-6 rounded-lg py-2 border-2 border-green-500 hover:text-white hover:bg-green-500 font-bold text-green-500'
-               : 'px-5 py-2'
-           }
-         >
-           Home
-         </NavLink>
-
-         <NavLink
-           to="/listedbooks"
-           className={({ isActive }) =>
-             isActive
-               ? 'px-5 py-2 rounded-lg border-2 border-green-500  hover:bg-green-500  hover:text-white  font-bold  text-green-500'
-               : 'px-5 py-2'
-           }
-         >
-           Listed Books
-         </NavLink>
-
-         <NavLink
-           to="/pagestoread"
-           className={({ isActive }) =>
-             isActive
-               ? 'px-5 py-2 rounded-lg border-2 border-green-500   hover:bg-green-500  hover:text-white text-green-500 font-bold'
-               : 'px-5 py-2'
-           }
-         >
-           Pages to Read
-         </NavLink>
-         <NavLink
-           to="/explore"
-           className={({ isActive }) =>
-             isActive
-               ? 'px-5 py-2 rounded-lg border-2 border-green-500   hover:bg-green-500  hover:text-white text-green-500 font-bold'
-               : 'px-5 py-2'
-           }
-         >
-           Explore
-         </NavLink>
-       
+       <div className="navbar-center hidden lg:flex">
+         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
        </div>
-       <div className="flex items-center lg:gap-4 gap-2 lg:text-xl">
-         <NavLink className="lg:px-8 hover:bg-transparent border-2  px-4 py-3 hover:text-green-500 bg-green-400 font-bold hover:border-green-500 duration-500 text-white rounded-xl">
-           Sign In
-         </NavLink>
-         <NavLink className="lg:px-8 px-4 py-3 bg-blue-300 font-bold hover:bg-transparent border-2 hover:text-blue-500 hover:border-blue-500 duration-700 text-white rounded-xl">
-           Sign Up
-         </NavLink>
-       </div>
-     </div>
+       <div className="navbar-end hidden lg:flex">{sideButton}</div>
    </div>
+  </>
  );
 };
 
