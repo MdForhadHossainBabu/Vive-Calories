@@ -1,47 +1,108 @@
 import { useEffect, useState } from "react";
 import { Bar, BarChart, CartesianGrid, Cell, XAxis, YAxis } from "recharts";
-import { getWishlist } from "../utils";
+import { getData } from "../utils";
 
-const PageOfRead = (props) => {
+const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
+
+const data = [
+  {
+    name: 'Page A',
+    uv: 4000,
+    pv: 2400,
+    amt: 2400,
+  },
+  {
+    name: 'Page B',
+    uv: 3000,
+    pv: 1398,
+    amt: 2210,
+  },
+  {
+    name: 'Page C',
+    uv: 2000,
+    pv: 9800,
+    amt: 2290,
+  },
+  {
+    name: 'Page D',
+    uv: 2780,
+    pv: 3908,
+    amt: 2000,
+  },
+  {
+    name: 'Page E',
+    uv: 1890,
+    pv: 4800,
+    amt: 2181,
+  },
+  {
+    name: 'Page F',
+    uv: 2390,
+    pv: 3800,
+    amt: 2500,
+  },
+  {
+    name: 'Page G',
+    uv: 3490,
+    pv: 4300,
+    amt: 2100,
+  },
+];
+
+const getPath = (x, y, width, height) => {
+  return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3}
+  ${x + width / 2}, ${y}
+  C${x + width / 2},${y + height / 3} ${x + (2 * width) / 3},${y + height} ${x + width}, ${y + height}
+  Z`;
+};
+
+const TriangleBar = (props) => {
+  const { fill, x, y, width, height } = props;
+
+  return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
+};
+
+
+const PageOfRead = () => {
 
  
-  const { fill, x, y, width, height } = props;
+
  const [pages, setPages] = useState([]);
  useEffect(() => {
-  const pagesData = getWishlist()
+  const pagesData = getData()
   setPages(pagesData)
  }, [])
  
  console.log(pages);
-const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
+
  return (
-   <div>
-     <BarChart
-       width={500}
-       height={300}
-       data={pages.totalPages}
-       margin={{
-         top: 20,
-         right: 30,
-         left: 20,
-         bottom: 5,
-       }}
+   <BarChart className="flex items-center justify-center mx-auto my-auto"
+     width={800}
+     height={300}
+     data={pages}
+     margin={{
+       top: 20,
+       right: 30,
+       left: 20,
+       bottom: 5,
+     }}
+   >
+     <CartesianGrid strokeDasharray="3 3" />
+     <XAxis dataKey="bookName" />
+     <YAxis />
+     <Bar
+       dataKey="totalPages"
+       fill="#8884d8"
+       shape={<TriangleBar />}
+       label={{ position: 'top' }}
      >
-       <CartesianGrid strokeDasharray="3 3" />
-       <XAxis dataKey={pages.author} />
-       <YAxis />
-       <Bar
-         dataKey={pages.totalPages}
-         fill="#8884d8" shape={<PageOfRead/>}
-         label={{ position: 'top' }}
-       >
-         {pages.map((entry, index) => (
-           <Cell key={`cell-${index}`} fill={colors[index % 20]} />
-         ))}
-       </Bar>
-     </BarChart>
-   </div>
+       {data.map((entry, index) => (
+         <Cell key={`cell-${index}`} fill={colors[index % 20]} />
+       ))}
+     </Bar>
+   </BarChart>
  );
-};
+}
+
 
 export default PageOfRead;
