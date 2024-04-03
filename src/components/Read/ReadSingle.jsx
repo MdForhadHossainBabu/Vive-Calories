@@ -1,4 +1,6 @@
-const ReadSingle = ({single}) => {
+const ReadSingle = ({ book }) => {
+ console.log(book);
+ // const {} = book;
  return (
   <div>
    adsasdfsa

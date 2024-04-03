@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react";
-import { readData } from "../utils";
+import { getData } from "../utils";
 import ReadSingle from "./ReadSingle";
 
 const Read = () => {
  const [books, setBooks] = useState([]);
-console.log(books);
+// console.log(books);
 
  useEffect(() => {
-  const storedBooks = readData();
+  const storedBooks = getData();
   setBooks(storedBooks);
- },[])
+ }, [])
+ // console.log(books);
  return (
   <div className="flex gap-2">
    {
-    books.map(book => <ReadSingle key={book.bookId} single={book}></ReadSingle>)
+    books.map(book => <ReadSingle key={book.bookId} book={book}></ReadSingle>)
    }
   </div>
  );
