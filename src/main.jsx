@@ -9,6 +9,7 @@ import ErrorPage from './components/ErrorPage/ErrorPage'
 import Read from './components/Read/Read'
 import Wishlist from './components/Wishlist/Wishlist'
 import { Toaster } from 'react-hot-toast'
+import PageOfRead from './components/PageOfRead/PageOfRead'
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Banner></Banner>,
+      },
+      {
+        path: '/readPage',
+        element:<PageOfRead></PageOfRead>
       },
       {
         path: '/listBooks',

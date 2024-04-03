@@ -12,7 +12,7 @@ const Read = () => {
  }, [])
  // console.log(books);
  return (
-  <div className="flex gap-2">
+  <div>
    {
     books.map(book => <ReadSingle key={book.bookId} book={book}></ReadSingle>)
    }
