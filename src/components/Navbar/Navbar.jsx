@@ -43,7 +43,7 @@ const Navbar = () => {
           to="/readPage"
           className={({ isActive }) =>
             isActive
-              ? 'text-green-500  px-12 font-bold hover:bg-green-500 hover:text-white border-green-500  lg:border-2'
+              ? 'text-green-500  px-4 font-bold hover:bg-green-500 hover:text-white border-green-500  lg:border-2'
               : 'lg:border-2'
           }
         >

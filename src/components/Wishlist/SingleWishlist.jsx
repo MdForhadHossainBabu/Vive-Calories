@@ -14,7 +14,7 @@ const SingleWishlist = ({ wish }) => {
   } = wish;
   return (
     <div className="my-6">
-      <div className="flex border-2 px-4 py-3 w-1/2 rounded-lg items-center gap-6">
+      <div className="flex border-2 px-4 py-3 w-[52rem] rounded-lg items-center gap-6">
         <div className='border px-7 py-12 bg-gray-200 round'>
           <img src={image} alt="img" />
         </div>

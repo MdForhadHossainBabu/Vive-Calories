@@ -77,7 +77,7 @@ const PageOfRead = () => {
 
  return (
    <BarChart className="flex items-center justify-center mx-auto my-auto"
-     width={800}
+     width={500}
      height={300}
      data={pages}
      margin={{
